@@ -48,6 +48,15 @@ footer {
   margin: 10% auto;
 }
 
+.pressed {
+  box-shadow: 0 3px 4px #DBEBF3;
+  opacity: 0.5
+}
+
+.red {
+  color: red;
+}
+
 .drum {
   outline: none;
   border: 10px solid #F8DE22;

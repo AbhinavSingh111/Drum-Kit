@@ -44,13 +44,23 @@ function makeSound(key){
     }
 }
 
+function buttonAnimation (currentKey) {
+    let activeButton = document.querySelector("."+currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(()=>{
+        activeButton.classList.remove("pressed");
+    },100);
+}
+
 for (let i = 0 ; i < len ; i++) {
     document.querySelectorAll(".drum")[i].addEventListener("click", function(){
         let key = this.innerHTML;
         makeSound(key);
+        buttonAnimation(key);
     });
 }
 
 document.addEventListener("keydown", (event)=>{
     makeSound(event.key);
+    buttonAnimation(event.key);
 });
